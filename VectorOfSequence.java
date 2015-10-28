@@ -4,25 +4,30 @@ import java.util.Vector;
 
 @SuppressWarnings("serial")
 public class VectorOfSequence extends Vector<Sequence> {
-	int size;
+	int weight;
 	
 	public VectorOfSequence() {
 		super();
-		size = 0;
+		this.weight = 0;
+	}
+	
+	public VectorOfSequence(VectorOfSequence v) {
+		super(v);
+		this.weight = v.getSize();
 	}
 	
 	public void addAByteToTheLastSequence(int minimumSize) throws TooLongSequenceException {
 		int lastElementSize = this.lastElement().getSize();
 		this.lastElement().addAByte(minimumSize);
-		this.size = this.size() - lastElementSize + this.lastElement().getSize();
+		this.weight = this.size() - lastElementSize + this.lastElement().getSize();
 	}
 
 	public int getSize() {
-		return this.size;
+		return this.weight;
 	}
 	
 	public boolean add(Sequence sequence) {
-		this.size += sequence.getSize();
+		this.weight += sequence.getSize();
 		return this.add(sequence);
 	}
 }

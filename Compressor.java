@@ -1,5 +1,6 @@
 package compresseur;
 
+import java.io.IOException;
 import java.util.Vector;
 
 public abstract class Compressor {
@@ -15,5 +16,5 @@ public abstract class Compressor {
 		}
 	}
 	
-	public abstract Vector<Integer> compress();
+	public abstract Vector<Integer> compress() throws TooLongSequenceException, IOException;
 }
