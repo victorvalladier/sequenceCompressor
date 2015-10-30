@@ -21,6 +21,10 @@ public class Sequence {
 		return size;
 	}
 
+	public int getNumberOfElements() {
+		return numberOfElements;
+	}
+
 	public void addAByte(int minimumSize) throws TooLongSequenceException {
 		if(numberOfElements == 256) {
 			throw new TooLongSequenceException();

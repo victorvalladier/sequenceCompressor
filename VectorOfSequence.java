@@ -27,6 +27,7 @@ public class VectorOfSequence extends Vector<Sequence> {
 	}
 	
 	public boolean add(Sequence sequence) {
+		System.out.println(sequence.getSize());
 		this.weight += sequence.getSize();
 		return this.add(sequence);
 	}
